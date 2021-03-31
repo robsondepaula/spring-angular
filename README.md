@@ -4,7 +4,7 @@ Following along the [tutorial](https://www.youtube.com/watch?v=Gx4iBLKLVHk) whil
 
 ## employeemanager
 
-Java backend using Spring Boot, Spring Web, Spring Data and Lombok.
+Java backend using Spring Boot, Spring Web, Spring Data, Spring Security and Lombok.
 
 Using a docker compose file to spin up a MySQL DB and shell scripts to load test data generated using [Mockaroo](https://www.mockaroo.com/).
 
