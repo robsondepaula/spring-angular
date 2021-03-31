@@ -1,6 +1,6 @@
 # Spring Boot Full Stack with Angular
 
-Following along the [tutorial](https://www.youtube.com/watch?v=Gx4iBLKLVHk) while adding my own extras.
+Following along the [tutorial](https://www.youtube.com/watch?v=Gx4iBLKLVHk) while adding my own thoughts.
 
 ## employeemanager
 
