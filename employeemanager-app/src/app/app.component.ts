@@ -7,14 +7,14 @@ import { EmployeeService } from './employee.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   public employees: Employee[];
   public editEmployee: Employee;
   public deleteEmployee: Employee;
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService) {}
 
   ngOnInit(): void {
     this.getEmployees();
@@ -24,9 +24,11 @@ export class AppComponent implements OnInit {
     this.employeeService.getEmployees().subscribe(
       (response: Employee[]) => {
         this.employees = response;
-      }, (error: HttpErrorResponse) => {
+      },
+      (error: HttpErrorResponse) => {
         console.log(error.message);
-      });
+      }
+    );
   }
 
   public onOpenModal(employee: Employee, mode: string): void {
@@ -58,7 +60,6 @@ export class AppComponent implements OnInit {
     document.getElementById('add-employee-form').click();
     this.employeeService.addEmployee(addForm.value).subscribe(
       (response: Employee) => {
-        this.getEmployees();
         addForm.reset();
       },
       (error: HttpErrorResponse) => {
@@ -93,10 +94,12 @@ export class AppComponent implements OnInit {
   public searchEmployees(key: string): void {
     const results: Employee[] = [];
     for (const employee of this.employees) {
-      if (employee.name.toLowerCase().indexOf(key.toLowerCase()) !== -1
-        || employee.email.toLowerCase().indexOf(key.toLowerCase()) !== -1
-        || employee.phone.toLowerCase().indexOf(key.toLowerCase()) !== -1
-        || employee.jobTitle.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
+      if (
+        employee.name.toLowerCase().indexOf(key.toLowerCase()) !== -1 ||
+        employee.email.toLowerCase().indexOf(key.toLowerCase()) !== -1 ||
+        employee.phone.toLowerCase().indexOf(key.toLowerCase()) !== -1 ||
+        employee.jobTitle.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      ) {
         results.push(employee);
       }
     }
